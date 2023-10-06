@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 $name = $_POST['name'];
 $phone = $_POST['phone'];
@@ -7,8 +7,6 @@ $email = $_POST['email'];
 require_once('phpmailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
-
-
 
 // $mail->SMTPDebug = 3;                               // Enable verbose debug output
 
@@ -19,9 +17,9 @@ $mail->Username = 'snisarenkooksana2@gmail.com';                 // Наш ло�
 $mail->Password = 'obsqviiwrfyrxnse';                           // Наш пароль от ящика
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
-
+ 
 $mail->setFrom('snisarenkooksana2@gmail.com', 'Pulse');   // От кого письмо 
-$mail->addAddress('hacana3662@htoal.com');     // Add a recipient
+$mail->addAddress('wogojec616@htoal.com');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
 //$mail->addCC('cc@example.com');
@@ -37,8 +35,8 @@ $mail->Body    = '
 	Номер телефона: ' . $phone . '<br>
 	E-mail: ' . $email . '';
 
-if (!$mail->send()) {
-	return false;
+if(!$mail->send()) {
+    return false;
 } else {
-	return true;
+    return true;
 }
